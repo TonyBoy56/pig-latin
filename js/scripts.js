@@ -4,11 +4,28 @@ $(document).ready(function() {
         var phrase = $("#phrase").val();
 
         var vowels = ['a', 'e', 'i', 'u', 'o'];
-        var firstVowel = phrase.indexOf(vowels);
-        console.log(firstVowel);
-    //    var array = phrase.map(function(phrase){
-    //     return phrase + "way";
-    //    });
+
+    //    if (vowels.indexOf(phrase.charAt(0)) > -1 ) {
+    //     $("#output").text(phrase + "way");
+    //    }
+
+       for (i = 0; i < vowels.length; i++) {
+           if (vowels[i] === phrase.charAt(0)) {
+            $("#output").text(phrase + "way");
+           }
+           else {
+            $("#output").text(phrase.slice(1, phrase.length) + phrase.charAt(0) + "ay");
+           }
+       }
+
+        
+        // vowels.forEach(function(vowel) {
+        //     // if (phrase.charAt(0) === vowel){
+        //     //     $("#output").text(phrase + "way");
+        //     //  } else  {
+        //     //     $("#output").text(phrase.slice(1, phrase.length) + phrase.charAt(0) + "ay");
+        //     }
+        // });
       
 
     });
@@ -20,6 +37,3 @@ $(document).ready(function() {
 
 
 
- //var vowels = ["a", "e", "i", "o", "u"];
-        //var array = ["i", "way"];
-        //var newArray = array.map
